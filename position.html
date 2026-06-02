@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        .static{
+            width:100px;
+            height:100px;
+            background-color: aqua;
+            display:inline-block;
+            border:2px, solid black;
+
+            top:20px;
+        }
+        .relative{
+            width:100px;
+            height:100px;
+            background-color: rgb(94, 255, 0);
+            display:inline-block;
+            position:relative;
+            border:2px, solid black;
+        }
+        .absolute{ /*it will be on the top of every element except fixed*/
+            width:100px;
+            height:100px;
+            background-color: rgb(255, 0, 0);
+            display:inline-block;
+            right:20px;
+            border:2px, solid black;
+            position:absolute;
+        }
+        
+        .sticky{
+            width:100px;
+            height:100px;
+            background-color: rgb(0, 140, 255);
+            top:100px;
+            border:2px, solid black;
+            position:sticky;
+        }
+        
+        .s{
+            width:100px;
+            height:100px;
+            background-color: rgb(179, 154, 154);   
+            right:20px;
+            border:2px, solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="static">static</div>
+    <div class="relative">relative</div>
+    <div class="absolute">absolute</div>
+    <div class="sticky">sticky</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+    <div class="s">default</div>
+
+    
+</body>
+</html>

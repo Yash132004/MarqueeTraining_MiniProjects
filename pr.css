@@ -1,0 +1,8 @@
+.profile{
+    height:400px;
+    width:600px;
+    background-image: url("templates/dp.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+

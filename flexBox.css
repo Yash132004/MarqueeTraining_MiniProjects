@@ -1,0 +1,36 @@
+.flexContainer {
+    width: 800px;
+    height: 500px;
+    background-color: blueviolet;
+    display: flex; 
+    justify-content: space-evenly; /* main(default horizontal) axis ke along*/
+    align-items: center; /* cross(default vertical) axis ke along*/
+    border: 3px solid black;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.b1 {
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+}
+
+.b2 {
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+}
+
+.b3 {
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+}
+
+.b4 {
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+
+}

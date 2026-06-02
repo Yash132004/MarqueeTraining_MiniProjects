@@ -1,0 +1,58 @@
+:root{
+    --outbgc: rgb(221, 133, 133);
+    --outh:320px;
+    --outw:500px;
+    --outp:10px;
+    --b1h:100px;
+    --b1w:230px;
+    --b1bgc:yellow;
+    --disp:inline-block;
+    --b3w:465px;
+    --c1w:100px;
+    --c1h:100px;
+    --c1br:50px;
+    --c1ml:40%;
+    --c1mt:5px;
+    --border:2px, solid black;
+}
+
+.outer{
+    background-color: var(--outbgc);
+    height: var(--outh);
+    width: var(--outw);
+    padding:var(--outp);
+    border:var(--border);
+}
+
+.b1{
+    height:var(--b1h);
+    width:var(--b1w);
+    background-color: var(--b1bgc);
+    display:var(--disp);
+    border:var(--border);
+}
+
+.b2{
+    height:var(--b1h);
+    width:var(--b1w);
+    background-color: var(--b1bgc);
+    display:var(--disp);
+    border:var(--border);
+}
+
+.b3{
+    height:var(--b1h);
+    width:var(--b3w);
+    background-color: var(--b1bgc);
+    border:var(--border);
+}
+
+.c1{
+    height:var(--c1h);
+    width:var(--c1w);
+    border-radius: var(--c1br);
+    background-color: var(--b1bgc);
+    margin-left:var(--c1ml);
+    margin-top: var(--c1mt);
+    border:var(--border);
+}
