@@ -1,0 +1,39 @@
+.container{
+    display:grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows:80px 1fr 60px;
+
+    grid-template-areas: 
+        "header header header"
+        "sidebar main aside"
+        "footer footer footer";
+
+    gap:12px;
+    height:100vh;
+    width:100vh;
+    background-color: rgb(102, 102, 193);
+}
+
+.b1, .b2, .b3, .b4, .b5, .b6, .b7{
+ background-color: rgb(186, 83, 83);
+}
+
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.aside { grid-area: aside; }
+.footer { grid-area: footer; }
+
+
+
+
+
+
+
+
+
+
+
+
+
