@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height:90vh;
+            width:60vw;
+            margin:auto;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 3fr 2fr;
+            border: 1px solid black;
+            gap: 10px;
+        }
+
+        .box1{
+            grid-column: 1/2;
+            grid-row: 1/5;
+            background-color: rgb(0, 0, 0);
+        }
+        .box2{
+            grid-column: 2/5;
+            grid-row: 1/2;
+            background-color: rgb(72, 40, 168);
+        }
+        .box3{
+            grid-column: 2/3;
+            grid-row: 2/3;
+            background-color: rgb(204, 65, 65);
+
+        }
+        .box4{
+            grid-column: 3/4;
+            grid-row: 2/3;
+            background-color: green;
+
+        }
+        .box5{
+            grid-column: 4/5;
+            grid-row: 2/3;
+            background-color: orange;
+
+        }
+        .box6{
+            grid-column: 2/4;
+            grid-row: 3/4;
+            background-color: purple;
+
+        }
+        .box7{
+            grid-column: 4/5;
+            grid-row: 3/4;
+            background-color: pink;
+
+        }
+        .box8{
+            grid-column: 2/3;
+            grid-row: 4/5;
+            background-color: rgb(53, 53, 119);
+
+        }
+        .box9{
+            grid-column: 3/4;
+            grid-row: 4/5;
+            background-color: rgb(53, 53, 119);
+
+        }
+        .box10{
+            grid-column: 4/5;
+            grid-row: 4/5;
+            background-color: rgb(53, 53, 119);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box  box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+        <div class="box box10"></div>
+    </div>
+</body>
+</html>
+
+<!-- adminlte.io/themes/v4 -->

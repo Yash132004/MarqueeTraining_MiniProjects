@@ -1,0 +1,276 @@
+.outer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+}
+
+.sidebar{
+    width:20%;
+    height:100%;
+    background-color: #343A40;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand{
+    width:100%;
+    height:7%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.5px solid #9399A1;
+}
+
+.brandImg{
+    width:50%;
+    height:100%;
+}
+
+.boxes8{
+    width:100%;
+    height:90%;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.eb1{
+    display:flex;
+    margin-left: 15%;
+    justify-content: start;
+    align-items: center;
+    width:100%;
+    height:25%;
+    color:#adb4be;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: large;
+}
+
+
+.txt{
+    margin-left: 3%;
+}
+
+.bx8img{
+    width:6%;
+    height:50%;
+}
+
+.arr{
+    margin-left: 30%;
+    width:6%;
+    height:50%;
+}
+.pages{
+    width:80%;
+    height:5%;
+    font-size: large;
+    color: #9399A1;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.main{
+    width:80%;
+    height:100%;
+    background-color: #2B3035 ;
+}
+
+
+
+.header{
+    width:100%;
+    height:7%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(33, 37, 41);
+    border-bottom: 0.5px solid #9399A1;
+}
+
+.hSection1{
+    width:30%;
+    height:80%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .h1{ mentioned below h3 tag
+    width:5%;
+    height:50%;
+    border:1px solid white;
+} */
+
+.h2_1{
+    width:25%;
+    height:40%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#64747E;
+}
+
+.h2_2{
+    width:25%;
+    height:40%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#64747E;
+}
+
+.hSection2{
+    width:40%;
+    height:80%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.h3{
+    width:5%;
+    height:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h3img{
+    width:80%;
+    height:90%;
+}
+
+
+.h4{
+    width:30%;
+    height:90%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h4acc{
+    width:100%;
+    height:100%;
+
+}
+
+/* Dasboard */
+.dashBoard{
+    width:100%;
+    height:8%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.db1{
+    width:15%;
+    height:90%;
+    display:flex;
+    color:#bed2dc;
+    font-size: x-large;
+    font-weight: 400;
+    font-family:sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.db2{
+    width:20%;
+    height:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#9399A1;
+}
+
+.disp{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns: repeat(4fr, 20%);
+    grid-template-rows: 20% 60%;
+    gap:1%;
+}
+
+.dispb1{
+    margin-left: 2%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    background-color: blue;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.dispb2{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: rgb(53, 168, 41);
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dispb3{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    background-color: rgb(168, 111, 41);
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dispb4{
+    grid-column: 4/5;
+    grid-row: 1/2;
+    background-color: red;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+}
+
+.bottom-row{
+    grid-column:1/5; 
+    grid-row:2/3;
+
+    display:grid;
+    grid-template-columns: 60% 39%;
+    gap:1%;
+}
+
+.dispb5{
+    margin-left: 1%;
+    background:yellow;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dispb6{
+    margin-right: 1%;
+    background:purple;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dispbi{
+    width:100%;
+    height:100%;
+    border-radius: 5px;
+}
+
