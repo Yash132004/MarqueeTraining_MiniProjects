@@ -1,0 +1,27 @@
+.outer::before{
+    content:" ";
+    display:block;
+    background-color:red;
+    height: 4px;
+    width:70px;
+}
+
+.outer{
+    font-size: 50px;
+    transition: background-color 4s ease;
+    transition: transform 4s ease;
+}
+
+.outer:hover{
+    background-color: red;
+    transform:translate(100px, 100px);
+}
+
+
+.outer::selection{
+    color:hotpink;
+    background-color: lavender;
+    
+}
+
+

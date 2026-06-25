@@ -40,15 +40,15 @@
 
 .eb1{
     display:flex;
-    margin-left: 15%;
+    margin-left: 20%;
     justify-content: start;
     align-items: center;
     width:100%;
     height:25%;
     color:#adb4be;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    font-size: large;
+    font-weight:500;
+    font-size:medium;
 }
 
 
