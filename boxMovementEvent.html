@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOX Movement</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+
+    <script>
+        let cont =  document.querySelector(".container");
+
+        document.addEventListener('mousemove', ()=>{
+            cont.style.left = event.clientX + "px";
+            cont.style.top = event.clientY + "px";
+        })
+    </script>
+</body>
+</html>

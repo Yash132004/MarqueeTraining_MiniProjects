@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations on Array</title>
+</head>
+<body>
+    <script>
+               
+        let arr = [
+            {name:"bhupendr",salary:70 , age:50, country : "india"},
+            {name:"rohan", salary:50, age:24, country: "london" },
+            {name: "kartik", salary:3, age:2, country : "amarica"},
+            {name:"suraj",salary:2, age : 19 , country:"russia"},
+            {name:"aryan",salary:1,age:70 , country : "japan"},
+            {name:"aryan",salary:88,age:40 , country : "japan"},
+            {name: "jatin", salary:100, age:12, country:"russia"},
+
+            {name:"aaditya", salary:20, age : 19, country : "india"},
+            {name: "sachi", salary:1, age: 2 , country : "uganda"},
+            {name: "khushi", salary : 35, age:99, country : "brazil"}
+
+            
+        ]
+        
+        let adult = arr.find((item)=>{
+            return item.name.length == 5 && item.age >18  && item.salary>=50;
+        })
+
+        console.log(adult);
+
+        //Array Doubled 
+        let arrs = [0,1,2,3,4,5,6,7,8,9]
+
+        const doubled = arrs.map(item=>{
+            return item*2;
+            }
+        )
+
+        console.log(doubled);
+
+        //Mapping name 
+        const doubled1 = arr.map(item=>{
+            return item.name;
+            }
+        )
+
+        console.log(doubled1);
+
+        //to upper Case
+        const doubledUc = arr.map(item=>{
+            return item.name.toUpperCase();
+            }
+        )
+
+        console.log(doubledUc);
+
+        const doubledsal = arr.map(item=>{
+            return item.salary += 100;
+            }
+        )
+
+        console.log(doubledsal);
+
+        
+    </script>
+</body>
+</html>

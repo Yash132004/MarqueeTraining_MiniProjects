@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <style>
+        .first{
+            background-color: red;
+            width:100px;
+            height:100px;
+        }
+        .second{
+            background-color: blue;
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="dispb1.png" alt="img1"> -->
+    <img src="dispb2.png" alt="img1">
+    <div class="first"></div>
+
+    <script>
+        let img = document.querySelector("img")
+
+        setInterval(()=>{
+            img.setAttribute('src','./dispb1.png');
+        }, 2000);
+        setInterval(()=>{
+            img.setAttribute('src','./dispb2.png');
+        }, 4000);
+
+        let box = document.querySelector(".first");
+        setInterval(()=>{
+            box.classList.toggle("second");
+        }, 100);
+        // setInterval(()=>{
+        //    box.classList.toggle("first");
+        // }, 200);
+
+        
+        
+    </script>
+</body>
+</html>

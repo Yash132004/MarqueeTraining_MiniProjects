@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <div class="outt">
+        <div class="outer">
+            <div class="uper">
+                <img src="ss.png" class = "ssimg">
+            </div>
+            <div class="lower">
+                <div class="like">
+                    <img src="unliked.png" alt="imgLike" class="likeImg">
+                    <div class="cntLike">0</div>
+                </div>
+
+                <div class="cmnt">
+                    <img src="comment.png" alt="imgCmnt" class="cmntImg">
+                    <input type="text" class="cmntin">
+                    <span></span>
+                </div>
+
+                <div class="share">
+                    <img src="shar.png" alt="imgShare" class="shareImg">
+                    <div class="cntShare">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        //like logic
+        let likes = document.querySelector(".like");
+        let cnt = 0;
+
+        likes.addEventListener("dblclick", (event) => {
+            if (event) {
+                cnt++;
+                let img = document.querySelector(".likeImg");
+
+                img.src = "liked.png";
+            }
+
+            let cnter = document.querySelector(".cntLike");
+
+            cnter.textContent = cnt;
+        });
+        likes.addEventListener("click", (event)=>{
+            if(event){
+                if(cnt > 0){
+                    cnt--;  
+                    let img = document.querySelector(".likeImg");
+
+                    img.src = "unliked.png";
+                }else{
+                    cnt = 0;
+                }
+                let cnter = document.querySelector(".cntLike");
+
+                cnter.textContent = cnt;
+            }
+        });
+        //Comment Logic
+        let comnt = document.querySelector(".cmnt");
+        let input = document.querySelector(".cmntin");
+        let text = document.querySelector(".cmnt span");
+
+        input.style.visibility = "hidden";
+        text.style.visibility = "hidden";
+
+        comnt.addEventListener("click", () => {
+            if (input.style.visibility === "hidden") {
+                input.style.visibility = "visible";
+                text.style.visibility = "visible";
+                input.focus();
+            } else {
+                input.style.visibility = "hidden";
+                text.style.visibility = "hidden";
+            }
+        });
+
+        input.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                text.textContent = input.value;
+                input.value = "";
+            }
+        });
+
+        // Share Icon
+        let shares = document.querySelector(".share");
+        let cntshare = 0;
+
+        shares.addEventListener("click", (event) => {
+            if (event) {
+                cntshare++;
+            }
+
+            let cnter = document.querySelector(".cntShare");
+
+            cnter.textContent = cntshare;
+        });
+</script>
+</body>
+</html>

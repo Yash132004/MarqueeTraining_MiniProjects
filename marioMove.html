@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Move</title>
+
+    <style>
+        .mario{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .mario img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="mario">
+    <img src="images.png" alt="Mario">
+</div>
+
+<script>
+    const mario = document.querySelector(".mario");
+
+    let x = 100;
+    let y = 100;
+    const speed = 40;
+
+    document.addEventListener("keydown", function(event) {
+
+        switch(event.key) {
+            case "ArrowRight":
+                x += speed;
+                break;
+
+            case "ArrowLeft":
+                x -= speed;
+                break;
+
+            case "ArrowUp":
+                y -= speed;
+                break;
+
+            case "ArrowDown":
+                y += speed;
+                break;
+        }
+
+        mario.style.left = x + "px";
+        mario.style.top = y + "px";
+    });
+</script>
+
+</body>
+</html>

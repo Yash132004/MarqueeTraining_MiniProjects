@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Boxes</title>
+    <style>
+        .common{
+            width:25px;
+            height:25px;
+            /* border-radius:50%; */
+            position:absolute;
+        }
+
+       #red, #black, #blue, #yellow, #white{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            top: 10px;
+            z-index: 1000;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+
+        #red{
+            left: 0px;
+            background: red;
+        }
+
+        #black{
+            left: 50px;
+            background: black;
+        }
+
+        #blue{
+            left: 100px;
+            background: blue;
+        }
+
+        #yellow{
+            left: 150px;
+            background: yellow;
+        } 
+
+        #white{
+            left:200px;
+            background:white;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <div id="black"></div>
+    <div id="blue"></div>
+    <div id="yellow"></div>
+    <div id="white"></div>
+
+    <script>
+        let colr = "red";
+
+        document.getElementById("red").addEventListener("click", () => {
+            colr = "red";
+        });
+
+        document.getElementById("black").addEventListener("click", () => {
+            colr = "black";
+        });
+
+        document.getElementById("blue").addEventListener("click", () => {
+            colr = "blue";
+        });
+
+        document.getElementById("yellow").addEventListener("click", () => {
+            colr = "yellow";
+        });
+
+        document.getElementById("white").addEventListener("click", () => {
+            colr = "white";
+        });
+
+
+        function draw(event){
+            let newdiv = document.createElement("div");
+            newdiv.classList.add("common");
+
+            newdiv.style.left = event.clientX + "px";
+            newdiv.style.top = event.clientY + "px";
+
+            if (colr === "red") {
+                newdiv.style.backgroundColor = "red";
+            }else if(colr == "black"){
+                newdiv.style.backgroundColor = "black";
+            }else if(colr == "blue"){
+                newdiv.style.backgroundColor = "blue";
+            }else if(colr == "yellow"){
+                newdiv.style.backgroundColor = "yellow";
+            } else if(colr == "white"){
+                newdiv.style.backgroundColor = "white";
+            }
+
+            document.body.appendChild(newdiv);
+        }
+
+        document.addEventListener("mousedown", (event) => {
+            document.addEventListener("mousemove", draw);
+        });
+        
+        document.addEventListener("mouseup", (event) => {
+            document.removeEventListener("mousemove", draw);
+        });
+    </script>
+</body>
+</html>

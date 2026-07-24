@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        function calculator(a, b, opr) {
+            switch (opr) {
+                case "+":
+                    return a+b;
+                case "-":
+                    return a-b;
+                case "*":
+                    return a*b;
+                case "/":
+                    return b == 0 ? "Error: Divisible By Zero!! " : a/b;
+                default:
+                    return "Invalid operation";
+            }
+        }
+
+            console.log(calculator(10, 5, "+"));
+            console.log(calculator(10, 5, "-")); 
+            console.log(calculator(10, 5, "*")); 
+            console.log(calculator(10, 0, "/")); 
+    </script>
+</body>
+</html>

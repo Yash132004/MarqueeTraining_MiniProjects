@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        .container {
+            background-color: red;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 200px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">0</div>
+
+    <button id="inc">Increase</button>
+    <button id="dec">Decrease</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let count = 0;
+
+        let div = document.querySelector(".container");
+
+        let increaseBtn = document.querySelector("#inc");
+        let decreaseBtn = document.querySelector("#dec");
+        let resetBtn = document.querySelector("#reset");
+
+        increaseBtn.addEventListener("click", function () {
+            count++;
+            div.textContent = count;
+        });
+
+    
+        decreaseBtn.addEventListener("click", function () {
+            if(count > 0){
+                count--;
+            }
+            div.textContent = count;
+        });
+
+       
+        resetBtn.addEventListener("click", function () {
+            count = 0;
+            div.textContent = count;
+        });
+
+        // resetBtn.addEventListener("dblclick", function () {
+        //     console.log("Double Clicked Reset");
+        // });
+        increaseBtn.onclick = function(){console.log("onclick se chala")}
+        
+    </script>
+
+</body>
+</html>
