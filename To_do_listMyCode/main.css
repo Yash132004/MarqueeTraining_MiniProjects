@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    width: 100%;
+    height:50%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+ 
+.input-section {
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#taskInput:focus {
+    border-color: #764ba2;
+}
+
+.tasks{
+    width:100%;
+    border-radius: 8px;
+    display:flex;
+    justify-content: space-evenly;
+    gap:10px;
+    align-items: center;
+}
+
+    #submitbtn{
+        padding: 12px;
+        background: #4a90e2;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    #submitbtn:hover{
+        background: #357abd;
+    }
+
+#taskList{
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+
+.task{
+    background: #fff;
+    border-radius: 10px;
+    padding: 2px 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 4px solid #4a90e2;
+    border-right: 4px solid #4a90e2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task p {
+    margin: 4px 0;
+    font-size: 13px;
+    color: #555;
+    font-weight: 400;
+}
+
+.task p span {
+    font-weight: 600;
+    color: #222;
+}
+.menu-btn{
+    padding: 2px;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#menu-btn:hover{
+    background: #357abd;
+}

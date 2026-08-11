@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Inputs</title>
+</head>
+<body>
+    <p>Enter Your Name: </p>
+    <input id="name" type="text">
+
+    <p>Enter Your Email: </p>
+    <input id="email"  type="email">
+
+    <p>Enter Your Password: </p>
+    <input id="password" type="Password"></input>
+
+    <button type="submit">Submit</button>
+
+    <script>
+        let named = document.querySelector('#name');
+        let emaild = document.querySelector('#email');
+        let passwordd = document.querySelector('#password');
+
+        
+
+        let button = document.querySelector('button');
+        button.addEventListener('click', ()=>{
+            let obj = {
+            "Name":named.value,
+            "Email":emaild.value,
+            "Password":passwordd.value,
+            };
+            console.log(obj);
+        });
+    </script>
+</body>
+</html>

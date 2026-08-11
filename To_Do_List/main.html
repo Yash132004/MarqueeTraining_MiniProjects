@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<title>To-Do List</title>
+
+</head>
+<body>
+
+<div class="container">
+  <h1>To-Do List</h1>
+
+  <div class="input-section">
+    <input type="text" id="taskInput" placeholder="Type a task and press Enter..." maxlength="100">
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="active">Active</button>
+    <button class="filter-btn" data-filter="completed">Completed</button>
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <div class="footer">
+    <span id="taskCount">0 tasks left</span>
+    <button id="clearCompleted">Clear completed</button>
+  </div>
+</div>
+
+<script>
+  const taskInput = document.getElementById('taskInput');
+  const taskList = document.getElementById('taskList');
+  const taskCount = document.getElementById('taskCount');
+  const clearCompletedBtn = document.getElementById('clearCompleted');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  let tasks = [];
+  let currentFilter = 'all';
+  let openMenuId = null;   
+  let editingId = null;   
+
+  function addTask() {
+    const text = taskInput.value.trim();
+    if (text === '') return;
+
+    tasks.push({
+      id: Date.now(),
+      text: text,
+      completed: false
+    });
+
+    taskInput.value = '';
+    render();
+  }
+
+  function toggleTask(id) {
+    tasks = tasks.map(task =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    );
+    render();
+  }
+
+  function deleteTask(id) {
+    tasks = tasks.filter(task => task.id !== id);
+    openMenuId = null;
+    render();
+  }
+
+  function startEdit(id) {
+    editingId = id;
+    openMenuId = null;
+    render();
+  }
+
+  function saveEdit(id, newText) {
+    const text = newText.trim();
+    if (text !== '') {
+      tasks = tasks.map(task =>
+        task.id === id ? { ...task, text: text } : task
+      );
+    }
+    editingId = null;
+    render();
+  }
+
+  function clearCompleted() {
+    tasks = tasks.filter(task => !task.completed);
+    render();
+  }
+
+  function getFilteredTasks() {
+    if (currentFilter === 'active') return tasks.filter(t => !t.completed);
+    if (currentFilter === 'completed') return tasks.filter(t => t.completed);
+    return tasks;
+  }
+
+  function render() {
+    const filtered = getFilteredTasks();
+    taskList.innerHTML = '';
+
+    if (filtered.length === 0) {
+      taskList.innerHTML = '<div class="empty-msg">No tasks here!</div>';
+    } else {
+      filtered.forEach(task => {
+        const li = document.createElement('li');
+        li.className = task.completed ? 'completed' : '';
+
+        if (editingId === task.id) {
+          li.innerHTML = `
+            <input type="checkbox" ${task.completed ? 'checked' : ''} disabled>
+            <input type="text" class="edit-input" value="${escapeHtml(task.text)}" maxlength="100">
+          `;
+          const editInput = li.querySelector('.edit-input');
+          editInput.focus();
+          editInput.setSelectionRange(editInput.value.length, editInput.value.length);
+
+          editInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') saveEdit(task.id, editInput.value);
+          });
+          editInput.addEventListener('blur', () => saveEdit(task.id, editInput.value));
+        } else {
+          li.innerHTML = `
+            <input type="checkbox" ${task.completed ? 'checked' : ''}>
+            <span>${escapeHtml(task.text)}</span>
+            <div class="task-menu-wrap">
+              <button class="menu-btn">&#8942;</button>
+              <div class="options-menu ${openMenuId === task.id ? 'show' : ''}">
+                <button class="edit-option">Edit</button>
+                <button class="delete-option">Delete</button>
+              </div>
+            </div>
+          `;
+
+          li.querySelector('input[type="checkbox"]').addEventListener('change', () => toggleTask(task.id));
+
+          const menuBtn = li.querySelector('.menu-btn');
+          menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openMenuId = openMenuId === task.id ? null : task.id;
+            render();
+          });
+
+          li.querySelector('.edit-option').addEventListener('click', (e) => {
+            e.stopPropagation();
+            startEdit(task.id);
+          });
+
+          li.querySelector('.delete-option').addEventListener('click', (e) => {
+            e.stopPropagation();
+            deleteTask(task.id);
+          });
+        }
+
+        taskList.appendChild(li);
+      });
+    }
+
+    const remaining = tasks.filter(t => !t.completed).length;
+    taskCount.textContent = `${remaining} task${remaining !== 1 ? 's' : ''} left`;
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  taskInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') addTask();
+  });
+
+   
+  document.addEventListener('click', () => {
+    if (openMenuId !== null) {
+      openMenuId = null;
+      render();
+    }
+  });
+
+  clearCompletedBtn.addEventListener('click', clearCompleted);
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      render();
+    });
+  });
+
+  render();
+</script>
+
+</body>
+</html> 

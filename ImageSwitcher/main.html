@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="outer">
+
+        <img src="img1.jpg" alt="img" class="image">
+
+        <div class="nav">
+            <div class="prev">
+                <img src="prevIcon.png" alt="img" class="icon">
+            </div>
+            <div class="next">
+                <img src="nextIcon.png" alt="img" class="icon">
+            </div>
+        </div>
+    </div>
+    <script>
+         const image = document.querySelector(".image");
+        const prev = document.querySelector(".prev");
+        const next = document.querySelector(".next");
+
+        const images = [
+            "img1.jpg",
+            "img2.jpg",
+            "img3.jpg",
+        ];
+
+        let currentIndex = 0;
+
+        function showImage() {
+            image.src = images[currentIndex];
+        }
+
+        next.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage();
+        });
+
+        prev.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage();
+        });
+    </script>
+</body>
+</html>

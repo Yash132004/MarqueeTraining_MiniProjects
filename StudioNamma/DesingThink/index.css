@@ -1,0 +1,62 @@
+.outer{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E4E4E4;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+
+}
+
+.line-mask {
+  overflow: hidden; /* this is what "hides" the text before reveal */
+}
+
+.line-inner {
+    display: block;
+    transform: translateY(110%);
+    font-family:"Mixtape", Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 160px;
+    letter-spacing: -0.05em; 
+    line-height: 1;
+    text-align: center;
+    color:black;
+}
+
+.scene {
+  position: fixed;
+  inset: 0;
+  perspective: 1000px;   /* required for 3D tilt to actually render */
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.floater {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  overflow: hidden;
+}
+video {
+    object-fit: cover;
+    z-index: -100;
+    background-position: 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    inset: -100%;
+}

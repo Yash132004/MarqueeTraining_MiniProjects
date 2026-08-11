@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic_Tac_Toe</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="outer">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <script>
+        const cells = document.querySelectorAll(".cell");
+
+        
+        let board = [
+            "", "", "",
+            "", "", "",
+            "", "", ""
+        ];
+
+       
+        let currentPlayer = "X";
+
+        
+        cells.forEach((cell, index) => {
+
+            cell.addEventListener("click", () => {
+
+                if (board[index] !== "") {
+                    return;
+                }
+
+                board[index] = currentPlayer;
+
+                cell.textContent = currentPlayer;
+
+                console.log(board);
+
+                if (currentPlayer === "X") {
+                    currentPlayer = "O";
+                } else {
+                    currentPlayer = "X";
+                }
+
+            });
+
+        });
+
+    </script>
+</body>
+</html>

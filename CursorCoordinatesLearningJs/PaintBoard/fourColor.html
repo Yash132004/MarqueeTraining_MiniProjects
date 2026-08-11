@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Boxes</title>
     <style>
+        body{
+            margin: 0;
+            background: #2e3d34;
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 6px 6px;
+            border: 16px solid #6b4226;
+            box-sizing: border-box;
+            min-height: 100vh;
+            cursor: crosshair;
+        }
+
         .common{
             width:25px;
             height:25px;
-            /* border-radius:50%; */
+            border-radius:50%;
             position:absolute;
         }
 
@@ -16,34 +27,36 @@
             width: 50px;
             height: 50px;
             position: fixed;
-            top: 10px;
+            top: 20px;
             z-index: 1000;
             cursor: pointer;
-            border: 1px solid black;
+            border: 2px solid #d8cbb0;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
         }
 
         #red{
-            left: 0px;
+            left: 20px;
             background: red;
         }
 
         #black{
-            left: 50px;
+            left: 80px;
             background: black;
         }
 
         #blue{
-            left: 100px;
+            left: 140px;
             background: blue;
         }
 
         #yellow{
-            left: 150px;
+            left: 200px;
             background: yellow;
         } 
 
         #white{
-            left:200px;
+            left:260px;
             background:white;
         }
     </style>
@@ -111,3 +124,4 @@
     </script>
 </body>
 </html>
+
